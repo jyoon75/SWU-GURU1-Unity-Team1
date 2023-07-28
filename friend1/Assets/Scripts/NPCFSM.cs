@@ -11,6 +11,7 @@ public class NPCFSM : MonoBehaviour
         Idle,
         Move,
         Attack,
+        Die,
         
         
     }
@@ -86,15 +87,10 @@ public class NPCFSM : MonoBehaviour
             case NPCState.Attack:
                 Attack();
                 break;
-            // case NPCState.Return:
-            //     Return();
-            //     break;   
-            // case NPCState.Damaged:
-            //     Damaged();
-            //     break;
-            // case NPCState.Die:
-            //     Die();
-            //     break;
+           
+            case NPCState.Die:
+                Die();
+                break;
             
             
             
