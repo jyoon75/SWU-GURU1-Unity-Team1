@@ -24,7 +24,7 @@ public class ActionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (talkManager.isTalk == true)
+        if (talkManager.isTalk == true || GameManager.Paused == true)
         {
             playerAction = false;
         }

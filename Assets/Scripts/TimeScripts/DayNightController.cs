@@ -39,21 +39,6 @@ public class DayNightController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, range, objectLayerMask))
-            {
-                if (hit.collider.CompareTag("Bed"))
-                {
-                    Debug.Log("Ãâ·ÂÇÒ ´ë»ç...");
-                    dayNightController.ToggleDayNight();
-
-                }
-            }
-        }
 
         if(isNight)//¹ã ½ÃÀÛ
         {
@@ -89,11 +74,10 @@ public class DayNightController : MonoBehaviour
     {
         if (!isNight) //³·ÀÏ ¶§¸¸ ¹ãÀ¸·Î Åä±Û
         {
-            isNight = !isNight; //¹ã -> ³·
+            isNight = !isNight; // ³· -> ¹ã
             currentTime = 0f; //¹Ì¸® ¹ã Å¸ÀÌ¸Ó ÃÊ±âÈ­
 
         }
-
     }
 
     private void OnTimerEnd() //¹ã->³·

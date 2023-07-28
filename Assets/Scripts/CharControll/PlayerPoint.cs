@@ -12,6 +12,7 @@ public class PlayerPoint : MonoBehaviour
 
     public TalkManager talkManager;
     public Inventory inventory;
+    public DayNightController dayNightController;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,10 @@ public class PlayerPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(GameManager.gm.gState == GameManager.GameState.Day) // 낮일 때만 상호작용 가능
+        if (!dayNightController.isNight) // 낮일 때만 상호작용 가능
+        {
             CheakObject();
+        }
     }
 
 
@@ -49,9 +52,9 @@ public class PlayerPoint : MonoBehaviour
                     talkManager.Talk(hitInfo.collider.name);
                 }
             }
-            else
+
             // 만약 레이에 부딪힌 대상의 레이어가 'Item'라면
-            if (hitInfo.transform.gameObject.layer == LayerMask.NameToLayer("Item"))
+            else if (hitInfo.transform.gameObject.layer == LayerMask.NameToLayer("Item"))
             {
                 // 크로스 노란색으로 만들고 '클릭하여 얻기' 문구 띄우기
                 crossImg.color = Color.yellow;
@@ -73,7 +76,23 @@ public class PlayerPoint : MonoBehaviour
                     targetItem = null;
                 }
             }
-            else // 레이에 부딪힌 대상의 레이어가 'character'도 'item'도 아니라면
+
+            // 만약 부딪힌 대상의 테그가 Bed라면
+            else if(hitInfo.collider.CompareTag("Bed"))
+            {
+                // 크로스 노란색으로 만들고 '클릭하여 휴식하기' 문구 띄우기
+                crossImg.color = Color.yellow;
+                contactText.text = "Click to rest";
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    crossImg.color = Color.white;
+                    contactText.text = " ";
+                    dayNightController.ToggleDayNight();
+                }
+            }
+
+            else
             {
                 crossImg.color = Color.white;
                 contactText.text = " ";
