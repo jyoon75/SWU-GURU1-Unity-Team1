@@ -68,7 +68,7 @@ public class NPCFSM : MonoBehaviour
         originRot = transform.rotation;
         anim = transform.GetComponentInChildren<Animator>();
         smith = GetComponent<NavMeshAgent>();
-
+        attacknum=0;
 
     }
 
@@ -141,7 +141,7 @@ public class NPCFSM : MonoBehaviour
     }
     public void Attack()
     {
-        attacknum=0;
+        
         // smith.ResetPath();
         if (Vector3.Distance(transform.position, Zombie.position)<attackDistance)
         {
@@ -158,22 +158,19 @@ public class NPCFSM : MonoBehaviour
                     GameObject clone = Instantiate(projectilePrefab,projectileSpawnPoint.position, projectileSpawnPoint.rotation);
                     clone.GetComponent<npcattack>().Setup(Zombie.position);  
                     anim.SetTrigger("StartAttack");
+                    attacknum+=1;
+                    if(attacknum>4)
+                    {
+                        m_State = NPCState.Die;
+                        Die();
+                        anim.SetTrigger("Die");
+                    }
+                    
                 }
-                attacknum ++;
-            
+                
+                print("attacknum"+attacknum);
             }
                     
-                // LookRotationToZombie();
-           
-                
-                
-            
-            
-                // player.GetComponent<PlayerMove>().DamageAction(attackPower);
-           
-
-            // 
-            // }
                
                
                 
