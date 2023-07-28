@@ -186,134 +186,23 @@ public class NPCFSM : MonoBehaviour
         
 
     }
-    // private void CalculateDistanceToTargetAndSelectState()
-    // {
-    //     if(Zombie==null) return;
+    void Die()
+    {
+          
+        StopAllCoroutines();
 
-    //     float distance = Vector3.Distance(Zombieposition, transform.position);
-    //     if(distance<= attackRangee)
-    //     {
-    //         ChangeState(NPCState.Attack);
-    //     }
+        StartCoroutine(DieProcess());
         
-        
-    // }
-    // public void ChangeState(NPCState newState)
-    // {
-    //     if(m_State == newState) return;
-    //     StopCoroutine(m_State.ToString());
-    //     m_State = newState;
-    //     StartCoroutine(m_State.ToString());
-    // }
-    // private void LookRotationToTarget()
-    // {
-    //     if (other.tag == "Zombie")
-    //     {
-    //         transform.LookAt(other.transform);
-    //     }
-        
-    // }
-    // public void AttackAction()
-    // {
-    //     player.GetComponent<PlayerMove>().DamageAction(attackPower);
-    // }
-    // void Return()
-    // {
-    //     if(Vector3.Distance(transform.position, originPos)>0.1f)
-    //     {
-    //         // Vector3 dir = (originPos - transform.position).normalized;
-    //         // cc.Move(dir * moveSpeed * Time.deltaTime);
-    //         // transform.forward = dir; 
-    //         smith.destination = originPos;
-    //         smith.stoppingDistance = 0;
+    }
+    IEnumerator DieProcess()
+    {
+        cc.enabled = false;
 
+        yield return new WaitForSeconds(2f);
+        print("소멸!");
+        Destroy(gameObject);
 
-    //     }
-    //     else
-    //     {
-    //         smith.isStopped = true;
-    //         smith.ResetPath();
-            
-    //         transform.position = originPos;
-    //         transform.rotation = originRot;
-    //         hp= maxHp;
-    //         m_State =NPCState.Idle;
-    //         print("상태 전환: Return -> Idle");
-    //         anim.SetTrigger("MoveToIdle");
-    //     }
+    }    
 
-    // }
-    // void Damaged()
-    // {
-    //     StartCoroutine(DamageProcess());
-    // }
-    // IEnumerator DamageProcess()
-    // {
-    //     yield return new WaitForSeconds(1.0f);
-
-    //     m_State = NPCState.Move;
-    //     print("상태 전환 : Damaged-> Move");
-    // }
-    
-    // public void HitEnemy(int hitPower)
-    // {   
-    //     hp -= hitPower;
-        
-    //     if(m_State==NPCState.Damaged || m_State == NPCState.Die || m_State == NPCState.Return)
-    //     {
-    //         return;
-    //     }
-        
-    //     smith.isStopped = true;
-    //     smith.ResetPath();
-
-
-    //     if (hp > 0)
-    //     {
-    //         m_State = NPCState.Damaged;
-    //         print("상태 전환: Any state -> Damaged");
-    //         print(hp);
-
-    //         anim.SetTrigger("Damaged");
-
-    //         Damaged();
-    //     }
-    //     else
-    //     {
-    //         m_State = NPCState.Die;
-    //         print("상태 전환: Any state -> Die");
-    //         anim.SetTrigger("Die");
-    //         Die();
-    //     }
-            
-    // }
-    // void Die()
-    // {
-    //     StopAllCoroutines();
-
-    //     StartCoroutine(DieProcess());
-    // }
-    // IEnumerator DieProcess()
-    // {
-    //     cc.enabled = false;
-
-    //     yield return new WaitForSeconds(2f);
-    //     print("소멸!");
-    //     Destroy(gameObject);
-
-    // }
-    // public void HitZombie(int hitPower)
-    // {
-    //     hp-= hitPower;
-        
-    // }
-    // if(Physics.Raycast(ray,out hitInfo))
-    // {
-    //     if(hitInfo.transform.gameObject.layer == LayerMask.NameToLayer("Zombie"))
-    //     {
-    //         Zombie eFSM = hitInfo.transform.GetComponent<EnemyFSM>();
-    //         eFSM.HitEnemy(weaponPower);
-    //     }
-    // }
     
 }
