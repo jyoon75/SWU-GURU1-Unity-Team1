@@ -23,13 +23,13 @@ public class HUD : MonoBehaviour
         switch (type)
         {
             case InfoType.Day:
-                TextField.text = string.Format("{0:F0}ÀÏÂ÷", DayNightController.instance.Day); //NÀÏÂ÷ Ç¥Çö
+                TextField.text = string.Format("{0:F0}ì¼ì°¨", DayNightController.instance.Day); //Nì¼ì°¨ í‘œí˜„
                 break;
 
             case InfoType.Time:
                 if (DayNightController.instance.isNight)
                 {
-                    TextField.text = "³·±îÁö ³²Àº ½Ã°£:";
+                    TextField.text = "ë‚®ê¹Œì§€ ë‚¨ì€ ì‹œê°„:";
                 }
                 else
                 {
@@ -47,7 +47,7 @@ public class HUD : MonoBehaviour
                 {
                     TextField.text = " ";
                 }
-                //TextField.text = "º¯°æ ÈÄ";
+                //TextField.text = "ë³€ê²½ í›„";
                 break;
 
             case InfoType.Health:
