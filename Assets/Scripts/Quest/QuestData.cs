@@ -9,6 +9,15 @@ public class QuestData
 
     public QuestGoal goal; // 퀘스트 목표
 
+    public QuestData(string v, QuestGoal.GoalType goalType)
+    {
+        V = v;
+        GoalType = goalType;
+    }
+
+    public string V { get; }
+    public QuestGoal.GoalType GoalType { get; }
+
     //public string description; //설명
     //public string reward; //보상     
 

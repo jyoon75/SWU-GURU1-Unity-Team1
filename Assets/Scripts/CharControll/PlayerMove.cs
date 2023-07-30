@@ -61,35 +61,35 @@ public class PlayerMove : MonoBehaviour
         yVelocity += gravity * Time.deltaTime;
         dir.y = yVelocity;
 
-        if (actionManager.playerAction)
-        {
-            cc.Move(dir * moveSpeed * Time.deltaTime);
-        }
-<<<<<<< HEAD
-        //if(Camera.main !=null) 
-        //{
-        //    dir = Camera.main.transform.TransformDirection(dir);
-        //    transform.position += dir * moveSpeed* Time.deltaTime;
-        //    yVelocity += gravity * Time.deltaTime;
-        //    dir.y = yVelocity;
-=======
-        /*
-        if(Camera.main !=null)
-        {
-            dir = Camera.main.transform.TransformDirection(dir);
-            transform.position += dir * moveSpeed* Time.deltaTime;
-            yVelocity += gravity * Time.deltaTime;
-            dir.y = yVelocity;
->>>>>>> aa983196b966f7b5affc677eff6424c4ee8b68c1
+//        if (actionManager.playerAction)
+//        {
+//            cc.Move(dir * moveSpeed * Time.deltaTime);
+//        }
+//<<<<<<< HEAD
+//        //if(Camera.main !=null) 
+//        //{
+//        //    dir = Camera.main.transform.TransformDirection(dir);
+//        //    transform.position += dir * moveSpeed* Time.deltaTime;
+//        //    yVelocity += gravity * Time.deltaTime;
+//        //    dir.y = yVelocity;
+//=======
+//        /*
+//        if(Camera.main !=null)
+//        {
+//            dir = Camera.main.transform.TransformDirection(dir);
+//            transform.position += dir * moveSpeed* Time.deltaTime;
+//            yVelocity += gravity * Time.deltaTime;
+//            dir.y = yVelocity;
+//>>>>>>> aa983196b966f7b5affc677eff6424c4ee8b68c1
 
-        //    cc.Move(dir*moveSpeed*Time.deltaTime);
+//        //    cc.Move(dir*moveSpeed*Time.deltaTime);
         
-<<<<<<< HEAD
-        //}
-=======
-        }
-        */
->>>>>>> aa983196b966f7b5affc677eff6424c4ee8b68c1
+//<<<<<<< HEAD
+//        //}
+//=======
+//        }
+//        */
+//>>>>>>> aa983196b966f7b5affc677eff6424c4ee8b68c1
     }
 }
 

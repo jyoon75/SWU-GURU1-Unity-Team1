@@ -41,39 +41,39 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
-        // 슬롯 모음 변수에 슬롯들 채우기
-        quests = QuestHolder.GetComponentsInChildren<TextMeshProUGUI>();
+    //    // 슬롯 모음 변수에 슬롯들 채우기
+    //    quests = QuestHolder.GetComponentsInChildren<TextMeshProUGUI>();
         
-        QuestList = new Dictionary<int, QuestData>();
+    //    QuestList = new Dictionary<int, QuestData>();
 
-        // 퀘스트 추가
-        goal = new QuestGoal();
-        qData[0].goal.goalType = QuestGoal.GoalType.GatheringItem;
-        //qData[0].setData("Cube 획득하기", goal);
-        qData[0] = (new QuestData());
+    //    // 퀘스트 추가
+    //    goal = new QuestGoal();
+    //    qData[0].goal.goalType = QuestGoal.GoalType.GatheringItem;
+    //    //qData[0].setData("Cube 획득하기", goal);
+    //    qData[0] = (new QuestData());
 
-        QuestList.Add(1, new QuestData("셸터 수리를 위한 목재 획득하기", goal.goalType));
-        /*
-        goal = new QuestGoal();
-        qData[1].goal.goalType = QuestGoal.GoalType.GatheringItem;
-        qData[1].setData("셸터 수리를 위한 목재 획득하기", goal);
-
-
-        QuestList.Add(0, qData[0]);
+    //    QuestList.Add(1, new QuestData("셸터 수리를 위한 목재 획득하기", goal.goalType));
+    //    /*
+    //    goal = new QuestGoal();
+    //    qData[1].goal.goalType = QuestGoal.GoalType.GatheringItem;
+    //    qData[1].setData("셸터 수리를 위한 목재 획득하기", goal);
 
 
-    }
-    void Update()
-    {
-        if (dayNightController.Day == 1)
-        {
-            QuestList.Add(1, qData[1]);
-        }
-        for (int i = 0; i < quests.Length; i++)
-        {
-            quests[i].text = QuestList[i].questName;
-        }
-        */
+    //    QuestList.Add(0, qData[0]);
+
+
+    //}
+    //void Update()
+    //{
+    //    if (dayNightController.Day == 1)
+    //    {
+    //        QuestList.Add(1, qData[1]);
+    //    }
+    //    for (int i = 0; i < quests.Length; i++)
+    //    {
+    //        quests[i].text = QuestList[i].questName;
+    //    }
+    //    */
     }
 
 }
