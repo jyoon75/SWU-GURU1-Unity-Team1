@@ -17,11 +17,11 @@ public class NPCFSM : MonoBehaviour
     }
     NPCState m_State;
 
-    public float findDistance = 8f;
+    public float findDistance = 20f;
 
     Transform Zombie;
 
-    public float attackDistance = 2f;
+    public float attackDistance = 8f;
 
     public float moveSpeed; 
 
