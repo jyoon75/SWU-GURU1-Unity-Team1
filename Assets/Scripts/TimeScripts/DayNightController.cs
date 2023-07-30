@@ -79,7 +79,7 @@ public class DayNightController : MonoBehaviour
         {
             isNight = !isNight; // ≥∑ -> π„
             currentTime = 0f; //πÃ∏Æ π„ ≈∏¿Ã∏” √ ±‚»≠
-
+            /*
             if(Input.GetKeyUp(KeyCode.Escape))
             {
                 if (Paused)
@@ -91,6 +91,7 @@ public class DayNightController : MonoBehaviour
                     GameManager.instance.Stop();
                 }
             }
+            */
 
         }
     }
