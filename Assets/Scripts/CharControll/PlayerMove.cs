@@ -54,7 +54,10 @@ public class PlayerMove : MonoBehaviour
         yVelocity += gravity * Time.deltaTime;
         dir.y = yVelocity;
 
-        cc.Move(dir * moveSpeed * Time.deltaTime);
+        if (actionManager.playerAction)
+        {
+            cc.Move(dir * moveSpeed * Time.deltaTime);
+        }
     }
 }
 
