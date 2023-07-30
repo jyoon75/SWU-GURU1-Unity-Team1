@@ -26,7 +26,7 @@ public class QuestManager : MonoBehaviour
         return questId;
     }
     */
-    /*
+    
     public GameObject questPanel; // 퀘스트 창
     public GameObject QuestHolder; // 퀘스트 들어있는 공간
     public TextMeshProUGUI[] quests; // 퀘스트 모음 변수
@@ -34,21 +34,29 @@ public class QuestManager : MonoBehaviour
     [Header("Quest_Data")]
     public Dictionary<int, QuestData> QuestList; // 데이터 배열을 키 값으로 구분하여 분류 (퀘스트 목록)
 
-    public QuestData[] qData;
+    public QuestData[] qData = new QuestData[10];
     public QuestGoal goal;
 
-    private void Awake()
+    public DayNightController dayNightController;
+
+    private void Start()
     {
         // 슬롯 모음 변수에 슬롯들 채우기
         quests = QuestHolder.GetComponentsInChildren<TextMeshProUGUI>();
-
+        
         QuestList = new Dictionary<int, QuestData>();
 
         // 퀘스트 추가
         goal = new QuestGoal();
         qData[0].goal.goalType = QuestGoal.GoalType.GatheringItem;
-        qData[0].setData("Cube 획득하기", goal);
+        //qData[0].setData("Cube 획득하기", goal);
+        qData[0] = (new QuestData());
 
+        QuestList.Add(1, new QuestData("셸터 수리를 위한 목재 획득하기", goal.goalType));
+        /*
+        goal = new QuestGoal();
+        qData[1].goal.goalType = QuestGoal.GoalType.GatheringItem;
+        qData[1].setData("셸터 수리를 위한 목재 획득하기", goal);
 
 
         QuestList.Add(0, qData[0]);
@@ -57,11 +65,15 @@ public class QuestManager : MonoBehaviour
     }
     void Update()
     {
+        if (dayNightController.Day == 1)
+        {
+            QuestList.Add(1, qData[1]);
+        }
         for (int i = 0; i < quests.Length; i++)
         {
             quests[i].text = QuestList[i].questName;
         }
-
+        */
     }
-    */
+
 }
