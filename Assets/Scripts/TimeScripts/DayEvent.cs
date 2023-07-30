@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class DayEvent : MonoBehaviour
 {
-
-    public int EventDay = DayNightController.instance.Day;
-
+    public GameObject F1;
+    public GameObject F2;
+    public GameObject F3;
+    public GameObject F4;
+    public GameObject F5;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        F1.SetActive(false);
+        F2.SetActive(false);
+        F3.SetActive(false);
+        F4.SetActive(false);
+        F5.SetActive(false);
     }
 
     // Update is called once per frame
@@ -19,34 +25,30 @@ public class DayEvent : MonoBehaviour
     {
         //public int EventDay = DayNightController.instance.Day;
 
-        switch (EventDay)
+        if ( DayNightController.instance.Day == 2 ) //동료 모집
         {
-            case 1:
-                break;
+            
+            print("2일차 이벤트 디버깅");
+        }
 
-            case 2:
-                print("2일차 이벤트 디버깅");
-                //이벤트 씬 넘기기
-                break;
+        else if (DayNightController.instance.Day == 3)
+        {
+            print("3일차 이벤트 디버깅");
+        }
 
-            case 3:
-                break;
+        else if (DayNightController.instance.Day == 4)
+        {
+            print("4일차 이벤트 디버깅");
+        }
 
-            case 4:
-                break;
+        else if ( DayNightController.instance.Day == 5 )
+        {
+            print("5일차 이벤트 디버깅");
+        }
 
-            case 5:
-                print("5일차 이벤트 디버깅");
-                break;
-
-            case 6:
-                break;
-
-            case 7:
-                print("7일차 결말 디버깅");
-                //결말 씬 넘기기
-                break;
-
+        else if (DayNightController.instance.Day == 7)
+        {
+            print("7일차 이벤트 디버깅");
         }
     }
 }
