@@ -11,17 +11,17 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    public float moveSpeed = 7f;    // ÀÌµ¿ ¼Óµµ º¯¼ö
+    public float moveSpeed = 7f;    // ï¿½Ìµï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    CharacterController cc;         // Ä³¸¯ÅÍ ÄÜÆ®·Ñ·¯ º¯¼ö
+    CharacterController cc;         // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    float gravity = -20f;           // Áß·Â º¯¼ö
-    float yVelocity = 0;            // ¼öÁ÷ ¼Ó·Â º¯¼ö
+    float gravity = -20f;           // ï¿½ß·ï¿½ ï¿½ï¿½ï¿½ï¿½
+    float yVelocity = 0;            // ï¿½ï¿½ï¿½ï¿½ ï¿½Ó·ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    public float jumpPower = 5.5f;  // Á¡ÇÁ·Â º¯¼ö
-    public bool isJumping = false;  // Á¡ÇÁ »óÅÂ º¯¼ö
+    public float jumpPower = 5.5f;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public bool isJumping = false;  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    public int hp = 20;             // ÇÃ·¹ÀÌ¾î Ã¼·Â º¯¼ö
+    public int hp = 20;             // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     public ActionManager actionManager;
 
@@ -34,36 +34,46 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // »ç¿ëÀÚÀÇ ÀÔ·Â ¹Þ±â
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Þ±ï¿½
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        // ÀÌµ¿ ¹æÇâ ¼³Á¤
+        // ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Vector3 dir = new Vector3(h, 0, v);
         dir = dir.normalized;
 
-        dir = Camera.main.transform.TransformDirection(dir); // ¸ÞÀÎ Ä«¸Þ¶ó ±âÁØÀ¸·Î ¹æÇâ º¯È¯
+        dir = Camera.main.transform.TransformDirection(dir); // ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
 
-        // ¸¸¾à Á¡ÇÁ »óÅÂ AND ¹Ù´Ú¿¡ ÂøÁö
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ AND ï¿½Ù´Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (isJumping && cc.collisionFlags == CollisionFlags.Below)
         {
-            isJumping = false; // Á¡ÇÁ »óÅÂ°¡ ¾Æ´Ï´Ù·Î ÃÊ±âÈ­
+            isJumping = false; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½Æ´Ï´Ù·ï¿½ ï¿½Ê±ï¿½È­
             yVelocity = 0;
         }
-        //Á¡ÇÁ
+        //ï¿½ï¿½ï¿½ï¿½
         if (isJumping == false && Input.GetButtonDown("Jump") && actionManager.playerAction == true)
         {
             yVelocity = jumpPower;
             isJumping = true;
         }
 
-        // Ä³¸¯ÅÍ ¼öÁ÷ ¼Óµµ¿¡ Áß·Â °ª Àû¿ë
+        // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ß·ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         yVelocity += gravity * Time.deltaTime;
         dir.y = yVelocity;
 
         if (actionManager.playerAction)
         {
             cc.Move(dir * moveSpeed * Time.deltaTime);
+        }
+        if(Camera.main !=null)
+        {
+            dir = Camera.main.transform.TransformDirection(dir);
+            transform.position += dir * moveSpeed* Time.deltaTime;
+            yVelocity += gravity * Time.deltaTime;
+            dir.y = yVelocity;
+
+            cc.Move(dir*moveSpeed*Time.deltaTime);
+        
         }
     }
 }
