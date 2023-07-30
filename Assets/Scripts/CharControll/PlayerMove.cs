@@ -61,19 +61,19 @@ public class PlayerMove : MonoBehaviour
         yVelocity += gravity * Time.deltaTime;
         dir.y = yVelocity;
 
-//        if (actionManager.playerAction)
-//        {
-//            cc.Move(dir * moveSpeed * Time.deltaTime);
-//        }
-//<<<<<<< HEAD
-//        //if(Camera.main !=null) 
-//        //{
-//        //    dir = Camera.main.transform.TransformDirection(dir);
-//        //    transform.position += dir * moveSpeed* Time.deltaTime;
-//        //    yVelocity += gravity * Time.deltaTime;
-//        //    dir.y = yVelocity;
-//=======
-//        /*
+        if (actionManager.playerAction)
+        {
+            cc.Move(dir * moveSpeed * Time.deltaTime);
+        }
+
+        //if (Camera.main != null)
+        //{
+        //    dir = Camera.main.transform.TransformDirection(dir);
+        //    transform.position += dir * moveSpeed * Time.deltaTime;
+        //    yVelocity += gravity * Time.deltaTime;
+        //    dir.y = yVelocity;
+        //}
+        /*
 //        if(Camera.main !=null)
 //        {
 //            dir = Camera.main.transform.TransformDirection(dir);
@@ -89,7 +89,8 @@ public class PlayerMove : MonoBehaviour
 //=======
 //        }
 //        */
-//>>>>>>> aa983196b966f7b5affc677eff6424c4ee8b68c1
+        //>>>>>>> aa983196b966f7b5affc677eff6424c4ee8b68c1
+
     }
 }
 
