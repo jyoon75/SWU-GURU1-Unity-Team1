@@ -65,16 +65,16 @@ public class PlayerMove : MonoBehaviour
         {
             cc.Move(dir * moveSpeed * Time.deltaTime);
         }
-        if(Camera.main !=null)
-        {
-            dir = Camera.main.transform.TransformDirection(dir);
-            transform.position += dir * moveSpeed* Time.deltaTime;
-            yVelocity += gravity * Time.deltaTime;
-            dir.y = yVelocity;
+        //if(Camera.main !=null) 
+        //{
+        //    dir = Camera.main.transform.TransformDirection(dir);
+        //    transform.position += dir * moveSpeed* Time.deltaTime;
+        //    yVelocity += gravity * Time.deltaTime;
+        //    dir.y = yVelocity;
 
-            cc.Move(dir*moveSpeed*Time.deltaTime);
+        //    cc.Move(dir*moveSpeed*Time.deltaTime);
         
-        }
+        //}
     }
 }
 

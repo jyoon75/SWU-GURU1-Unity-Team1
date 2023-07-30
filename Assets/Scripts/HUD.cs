@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     //디버깅용 public 임시 변수
-    int cur_hp = 60; //실시간 체력 변수
-    int max_hp = 100; //최대 체력
+    public int cur_hp = 60; //실시간 체력 변수
+    public int max_hp = 100; //최대 체력
 
-    int cur_thr = 20; //실시간 갈증 변수
-    int max_thr = 100; //최대 갈증
+    public int cur_thr = 20; //실시간 갈증 변수
+    public int max_thr = 100; //최대 갈증
     //나중에 다른 스크립트에서 받아온 변수로 받아오면 위 변수는 전부 없앨 예정!
 
     public enum InfoType { Day, Time, TimeCount, HealthSlider, HpCountText, ThirstSlider, ThirstCountText }

@@ -1022,6 +1022,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187692228}
   m_CullTransparentMesh: 1
+--- !u!1 &212747570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 212747572}
+  m_Layer: 0
+  m_Name: DayEventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &212747572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212747570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.5781105, y: 1.9042187, z: 2.1812668}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214613900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,7 +1993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a78caac80372c44bdbd5b8538d441b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayNightController: {fileID: 0}
+  dayNightController: {fileID: 319950160}
   objectLayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -2909,6 +2940,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df90ecb769bd9d4bb8ca69bd6e77838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cur_hp: 60
+  max_hp: 100
+  cur_thr: 20
+  max_thr: 100
   type: 0
   TextField: {fileID: 616205023}
   mySlider: {fileID: 0}
@@ -3062,21 +3097,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7027692491714870939, guid: e3aca9a08e3feac4a967590198a459a8, type: 3}
   m_PrefabInstance: {fileID: 4446048993573984282}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &638021114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638021107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df90ecb769bd9d4bb8ca69bd6e77838, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  TextField: {fileID: 1675082420}
-  mySlider: {fileID: 0}
 --- !u!1 &648602861
 GameObject:
   m_ObjectHideFlags: 0
@@ -3440,6 +3460,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df90ecb769bd9d4bb8ca69bd6e77838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cur_hp: 60
+  max_hp: 100
+  cur_thr: 20
+  max_thr: 100
   type: 3
   TextField: {fileID: 0}
   mySlider: {fileID: 708254156}
@@ -3802,6 +3826,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df90ecb769bd9d4bb8ca69bd6e77838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cur_hp: 60
+  max_hp: 100
+  cur_thr: 20
+  max_thr: 100
   type: 1
   TextField: {fileID: 824433161}
   mySlider: {fileID: 0}
@@ -4234,6 +4262,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df90ecb769bd9d4bb8ca69bd6e77838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cur_hp: 60
+  max_hp: 100
+  cur_thr: 20
+  max_thr: 100
   type: 5
   TextField: {fileID: 0}
   mySlider: {fileID: 936209460}
@@ -4406,6 +4438,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df90ecb769bd9d4bb8ca69bd6e77838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cur_hp: 60
+  max_hp: 100
+  cur_thr: 20
+  max_thr: 100
   type: 6
   TextField: {fileID: 946865047}
   mySlider: {fileID: 0}
@@ -6683,6 +6719,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df90ecb769bd9d4bb8ca69bd6e77838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cur_hp: 60
+  max_hp: 100
+  cur_thr: 20
+  max_thr: 100
   type: 2
   TextField: {fileID: 1675082420}
   mySlider: {fileID: 0}
@@ -7958,6 +7998,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df90ecb769bd9d4bb8ca69bd6e77838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cur_hp: 60
+  max_hp: 100
+  cur_thr: 20
+  max_thr: 100
   type: 4
   TextField: {fileID: 2025077528}
   mySlider: {fileID: 0}
@@ -8439,8 +8483,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7027692491714870939, guid: e3aca9a08e3feac4a967590198a459a8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 638021114}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3aca9a08e3feac4a967590198a459a8, type: 3}
