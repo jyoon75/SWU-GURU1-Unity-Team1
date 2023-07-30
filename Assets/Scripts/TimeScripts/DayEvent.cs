@@ -13,11 +13,11 @@ public class DayEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        F1.SetActive(false);
-        F2.SetActive(false);
-        F3.SetActive(false);
-        F4.SetActive(false);
-        F5.SetActive(false);
+        //F1.SetActive(false);
+        //F2.SetActive(false);
+        //F3.SetActive(false);
+        //F4.SetActive(false);
+        //F5.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class DayEvent : MonoBehaviour
 
         if ( DayNightController.instance.Day == 2 ) //동료 모집
         {
-            
+            F1.SetActive(true);
             print("2일차 이벤트 디버깅");
         }
 
