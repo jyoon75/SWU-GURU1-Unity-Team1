@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1f; //시간 스케일이 1인 경우, 정상적인 시간 흐름
+        Time.timeScale = 1; //시간 스케일이 1인 경우, 정상적인 시간 흐름
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     void Stop()
     {
         PauseMenuCanvas.SetActive(true); //정지캔버스 불러오기
-        Time.timeScale = 0f; //시간 스케일이 0인 경우, 정지
+        Time.timeScale = 0; //시간 스케일이 0인 경우, 정지
         Paused = true; //상태: 정지가 참임
     }
 
