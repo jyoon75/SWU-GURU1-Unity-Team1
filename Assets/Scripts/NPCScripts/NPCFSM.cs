@@ -73,7 +73,7 @@ public class NPCFSM : MonoBehaviour
         originRot = transform.rotation;
         anim = transform.GetComponentInChildren<Animator>();
         smith = GetComponent<NavMeshAgent>();
-        shelter = GameObject.Find("Shelter").transform;
+       
 
         attacknum=0;
     }
@@ -212,29 +212,5 @@ public class NPCFSM : MonoBehaviour
         Destroy(gameObject);
 
     }    
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            MoveToShelter();
-        }
-    }
-    void MoveToShelter()
-    {
-        if (Vector3.Distance(transform.position, shelter.position) > StopDistance)
-        {
-           
-            smith.isStopped = true;
-            smith.ResetPath();
-
-            // transform.forward = dir;
-            smith.stoppingDistance = StopDistance;
-           
-            smith.destination = shelter.position;
-
-            m_State = NPCState.Move;
-            print("쉘터 찾아가기");
-        }
-        
-    }
+   
 }

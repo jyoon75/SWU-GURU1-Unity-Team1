@@ -15,6 +15,7 @@ public class NPCtalk : MonoBehaviour
     public GameObject contButton;
     public GameObject NPCTalkCamera;
     public GameObject maincamera;
+    Transform Shelter;
     // public GameObject playerMove;
    
 
@@ -38,8 +39,7 @@ public class NPCtalk : MonoBehaviour
         dialogpanel.SetActive(false);
         maincamera.SetActive(true);
         NPCTalkCamera.SetActive(false);
-        // Button contbutton=GetComponent<Button>();
-        // contbutton.onClick.AddListener(NextLine);
+        Shelter = GameObject.Find("Shelter").transform;
        
         
         
@@ -124,7 +124,20 @@ public class NPCtalk : MonoBehaviour
             NPCTalkCamera.SetActive(false);
             maincamera.SetActive(true);
             StopAllCoroutines();
+          
+            StartCoroutine(Tele());
+            transform.position = Shelter.position;
         }
+    }
+    
+    IEnumerator Tele()
+    {
+        print("쉘터 텔포");
+       
+        yield return new WaitForSeconds(1f);
+       
+        StopAllCoroutines();
+        
     }
     
 }
