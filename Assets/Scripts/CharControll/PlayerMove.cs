@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public static PlayerMove instance;
+    void Awake()
+    {
+        PlayerMove.instance = this;
+
+    }
+
     public float moveSpeed = 7f;    // 이동 속도 변수
 
     CharacterController cc;         // 캐릭터 콘트롤러 변수

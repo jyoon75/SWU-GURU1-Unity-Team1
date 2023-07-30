@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -20,6 +21,8 @@ public class DayNightController : MonoBehaviour
 
     public int Day = 1; //N¿œ¬˜
     public bool isNight = false;
+
+    public static bool Paused = false;
 
     //public GameObject TimerText;
     //public GameObject TimerCountText;
@@ -76,6 +79,18 @@ public class DayNightController : MonoBehaviour
         {
             isNight = !isNight; // ≥∑ -> π„
             currentTime = 0f; //πÃ∏Æ π„ ≈∏¿Ã∏” √ ±‚»≠
+
+            if(Input.GetKeyUp(KeyCode.Escape))
+            {
+                if (Paused)
+                {
+                    GameManager.instance.Play();
+                }
+                else
+                {
+                    GameManager.instance.Stop();
+                }
+            }
 
         }
     }

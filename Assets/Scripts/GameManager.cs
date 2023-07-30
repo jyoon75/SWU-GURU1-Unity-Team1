@@ -7,11 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     public static bool Paused = false;
     public GameObject PauseMenuCanvas;
-    //public string LoadScene;
+    public GameObject UICanvas;
 
-    public GameObject Player;
+    void Awake()
+    {
+        GameManager.instance = this;
+    }
 
     [SerializeField]
     // Start is called before the first frame update
@@ -35,23 +40,33 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    void Stop()
+    public void Stop()
     {
-        PauseMenuCanvas.SetActive(true); //정지캔버스 불러오기
-        Time.timeScale = 0; //시간 스케일이 0인 경우, 정지
+        print("정지씬");
+        PauseMenuCanvas.SetActive(true);
+        UICanvas.SetActive(false);
+        Cursor.lockState = CursorLockMode.None; // 마우스 커서를 화면 중앙 고정 해제
+        Time.timeScale = 0f; //시간 스케일이 0인 경우, 정지
         Paused = true; //상태: 정지가 참임
     }
 
     public void Play()
     {
-        PauseMenuCanvas.SetActive(false); //정지캔버스 반대로 내보내기
+        print("게임씬");
+        PauseMenuCanvas.SetActive(false);
+        UICanvas.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked; // 마우스 커서를 화면 중앙에 고정
         Time.timeScale = 1f;
-        Paused = false; //상태: 정지가 거짓임
+        Paused = false;
+        //SceneManager.LoadScene("GameScene");
     }
 
     public void MainmenuButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        print("메인메뉴씬");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     //저장 함수
