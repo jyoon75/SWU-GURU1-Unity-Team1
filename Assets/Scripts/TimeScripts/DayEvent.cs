@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class DayEvent : MonoBehaviour
 {
-
-    //동료 오브젝트들
     public GameObject F1;
     public GameObject F2;
     public GameObject F3;
@@ -30,14 +28,8 @@ public class DayEvent : MonoBehaviour
 
         if ( DayNightController.instance.Day == 1 ) //동료 모집
         {
-            if( DayNightController.instance.day_currentTime == 1)
-            {
-                print(DayNightController.instance.Day + "일차 이벤트 디버깅");
-                print(DayNightController.instance.day_currentTime + "초 디버깅");
-            }
-
             F1.SetActive(true);
-            //print(DayNightController.instance.Day+"일차 이벤트 디버깅");
+            print(DayNightController.instance.Day+"일차 이벤트 디버깅");
         }
 
         else if (DayNightController.instance.Day == 2)
