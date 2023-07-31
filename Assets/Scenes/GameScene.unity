@@ -8118,7 +8118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 312374576}
-  - component: {fileID: 312374577}
+  - component: {fileID: 312374575}
   m_Layer: 0
   m_Name: QuestManager
   m_TagString: Untagged
@@ -8126,6 +8126,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &312374575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312374574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d524448b6660e42a14cd0c1e796705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questPanel: {fileID: 0}
+  QuestHolder: {fileID: 0}
+  quests: []
+  dayNightController: {fileID: 0}
 --- !u!4 &312374576
 Transform:
   m_ObjectHideFlags: 0
@@ -8141,39 +8157,6 @@ Transform:
   m_Father: {fileID: 635062226}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &312374577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312374574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa4adaa5d084dc5479883479313c5ffd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dayNightController: {fileID: 319950160}
-  inventory: {fileID: 387109007}
-  quest1Name: 
-  quest1NeedItem: 
-  quest1CurrentAmout: 0
-  quest1RequireAmount: 0
-  quest1isQuesting: 1
-  quest2Name: 
-  quest2NeedItem: 
-  quest2CurrentAmout: 0
-  quest2RequireAmount: 0
-  quest2isQuesting: 1
-  quest3Name: 
-  quest3NeedItem: 
-  quest3CurrentAmout: 0
-  quest3RequireAmount: 0
-  quest3isQuesting: 1
-  questPanel: {fileID: 572493672}
-  questText1: {fileID: 1310047133}
-  questText2: {fileID: 970021729}
-  questText3: {fileID: 272494914}
 --- !u!1001 &313255064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38756,7 +38739,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 320, y: 30}
+  m_CellSize: {x: 240, y: 30}
   m_Spacing: {x: 0, y: 10}
   m_Constraint: 1
   m_ConstraintCount: 1
