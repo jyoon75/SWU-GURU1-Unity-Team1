@@ -7363,6 +7363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1e20501d67284f9e694deb1cd18ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletEffect: {fileID: 100002, guid: 54dd9cb5740188a488b8baebbf19207c, type: 3}
   weaponPower: 5
   attackPower: 7
   attackRadius: 3
