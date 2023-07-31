@@ -14,6 +14,7 @@ public class PlayerPoint : MonoBehaviour
     public Inventory inventory;
     public DayNightController dayNightController;
     public PlayerMove playerMove;
+    public Quest quest;
     
 
     // Start is called before the first frame update
@@ -104,7 +105,29 @@ public class PlayerPoint : MonoBehaviour
                 {
                     crossImg.color = Color.white;
                     contactText.text = " ";
-                    dayNightController.ToggleDayNight();
+                    if (quest.quest1isQuesting == false)
+                    {
+                        quest.quest1isQuesting = true;
+                        for (int i = 0; i < inventory.slots.Length; i++)
+                        {
+                            if (inventory.slots[i].item != null)
+                            {
+                                if (inventory.slots[i].item.itemName == quest.quest1NeedItem)
+                                {
+                                    inventory.slots[i].itemCount -= quest.quest1RequireAmount;
+                                    
+                                    inventory.slots[i].countText.text = inventory.slots[i].itemCount.ToString();
+                                }
+                            }
+                        }
+                        dayNightController.ToggleDayNight();
+                    }
+                    else
+                    {
+                        messageText.text = "셸터에 필요한 아이템을 모두 모으지 못했습니다.";
+                        StartCoroutine(ClearMessage());
+                    }
+                    
                 }
             }
 
