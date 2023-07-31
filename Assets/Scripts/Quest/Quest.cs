@@ -99,6 +99,16 @@ public class Quest : MonoBehaviour
         {
             questText1.color = Color.yellow;
             quest1isQuesting = false;
+            for (int i = 0; i < inventory.slots.Length; i++)
+            {
+                if (inventory.slots[i].item != null)
+                {
+                    if (inventory.slots[i].item.itemName == quest1NeedItem)
+                    {
+                        inventory.slots[i].itemCount =- quest1RequireAmount;
+                    }
+                }
+            }
             quest1CurrentAmout = 0;
         }
     }
