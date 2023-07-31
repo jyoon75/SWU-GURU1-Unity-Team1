@@ -13,6 +13,7 @@ public class DayEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DayNightController.instance.Day = 1;
         //F1.SetActive(false);
         //F2.SetActive(false);
         //F3.SetActive(false);
@@ -28,37 +29,37 @@ public class DayEvent : MonoBehaviour
         if ( DayNightController.instance.Day == 1 ) //동료 모집
         {
             F1.SetActive(true);
-            print("2일차 이벤트 디버깅");
+            print(DayNightController.instance.Day+"일차 이벤트 디버깅");
         }
 
         else if (DayNightController.instance.Day == 2)
         {
-            print("3일차 이벤트 디버깅");
+            print(DayNightController.instance.Day+"일차 이벤트 디버깅");
         }
 
         else if (DayNightController.instance.Day == 3)
         {
-            print("3일차 이벤트 디버깅");
+            print(DayNightController.instance.Day + "일차 이벤트 디버깅");
         }
 
         else if (DayNightController.instance.Day == 4)
         {
-            print("4일차 이벤트 디버깅");
+            print(DayNightController.instance.Day + "일차 이벤트 디버깅");
         }
 
         else if ( DayNightController.instance.Day == 5 )
         {
-            print("5일차 이벤트 디버깅");
+            print(DayNightController.instance.Day + "일차 이벤트 디버깅");
         }
 
         else if (DayNightController.instance.Day == 6)
         {
-            print("5일차 이벤트 디버깅");
+            print(DayNightController.instance.Day + "일차 이벤트 디버깅");
         }
 
         else if (DayNightController.instance.Day == 7)
         {
-            print("7일차 이벤트 디버깅");
+            print(DayNightController.instance.Day + "일차 이벤트 디버깅");
         }
         else
         {

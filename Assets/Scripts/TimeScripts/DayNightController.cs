@@ -14,10 +14,12 @@ public class DayNightController : MonoBehaviour
     public Light sunLight; // 낮과 밤에 따라 조명을 조절할 라이트 오브젝트
 
     public float timerDuration = 300f; // 5분 타이머의 지속 시간 (초 단위)
-    public float currentTime; // 현재 타이머의 경과 시간
+    public float currentTime; // 현재 (밤)타이머의 경과 시간
+    public float day_currentTime; //낮 타이머의 경과 시간
     public float remainTime; //밤에서 낮까지 남은 시간
     public int min; //분
     public int sec; //초
+    public int day_sec; //(낮)초
 
     public int Day = 1; //N일차
     public bool isNight = false;
@@ -36,8 +38,10 @@ public class DayNightController : MonoBehaviour
     }
     private void Start()
     {
-        Day = 1; 
+        Day = 1;
+        isNight = false;
         currentTime = 0f; // 타이머 시작 시간을 0으로 초기화
+        day_currentTime = 0f; //낮 타이머도
     }
 
     private void Update()
@@ -63,6 +67,11 @@ public class DayNightController : MonoBehaviour
                 if (min == 0 && sec == 0)
                 {
                     OnTimerEnd();
+
+                    day_currentTime += Time.deltaTime;
+                    day_sec = Mathf.CeilToInt(remainTime % 60); //(낮)초 표현
+
+                    print("낮의 초:" + day_sec);
                 }
             }
 
@@ -100,6 +109,12 @@ public class DayNightController : MonoBehaviour
     {
         isNight = !isNight; // 타이머가 끝났을 때, 밤에서 낮으로 토글
         Day++; // N+1 일차
+
+        //day_currentTime += Time.deltaTime;
+        //day_sec = Mathf.CeilToInt(remainTime % 60); //(낮)초 표현
+
+        //print("낮의 초:"+day_sec);
+
         //저장하기
     }
 
