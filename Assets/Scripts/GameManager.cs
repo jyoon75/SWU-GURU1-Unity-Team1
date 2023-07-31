@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerMove.instance.cur_hp >= 0) 
+        if(PlayerMove.instance.cur_hp <= 0) 
         {
             SceneManager.LoadScene(2);
         }
