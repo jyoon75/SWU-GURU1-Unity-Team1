@@ -42,8 +42,24 @@ public class PlayerMove : MonoBehaviour
         Vector3 dir = new Vector3(h, 0, v);
         dir = dir.normalized;
 
-        dir = Camera.main.transform.TransformDirection(dir); // 메인 카메라 기준으로 방향 변환
 
+
+        // dir = Camera.main.transform.TransformDirection(dir); // 메인 카메라 기준으로 방향 변환
+        if(Camera.main !=null)
+        {
+            dir = Camera.main.transform.TransformDirection(dir);
+            transform.position += dir * moveSpeed* Time.deltaTime;
+            yVelocity += gravity * Time.deltaTime;
+            dir.y = yVelocity;
+
+            cc.Move(dir*moveSpeed*Time.deltaTime);
+        
+        }
+       
+       
+       
+       
+       
         // 만약 점프 상태 AND 바닥에 착지
         if (isJumping && cc.collisionFlags == CollisionFlags.Below)
         {
@@ -58,8 +74,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         // 캐릭터 수직 속도에 중력 값 적용
-        yVelocity += gravity * Time.deltaTime;
-        dir.y = yVelocity;
+        
 
         if (actionManager.playerAction)
         {

@@ -15,7 +15,17 @@ public class NPCtalk : MonoBehaviour
     public GameObject contButton;
     public GameObject NPCTalkCamera;
     public GameObject maincamera;
-    Transform Shelter;
+    
+    public GameObject HpBar;
+    public GameObject Thirst;
+
+
+    public GameObject Target1;
+    
+
+    
+
+
     // public GameObject playerMove;
    
 
@@ -39,7 +49,8 @@ public class NPCtalk : MonoBehaviour
         dialogpanel.SetActive(false);
         maincamera.SetActive(true);
         NPCTalkCamera.SetActive(false);
-        Shelter = GameObject.Find("Shelter").transform;
+        
+        
        
         
         
@@ -60,6 +71,9 @@ public class NPCtalk : MonoBehaviour
         NPCTalkCamera.SetActive(false);
         maincamera.SetActive(true);
         StopAllCoroutines();
+        HpBar.SetActive(true);
+        Thirst.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
     }
     IEnumerator Typing()
     {
@@ -91,6 +105,8 @@ public class NPCtalk : MonoBehaviour
             StartCoroutine(Typing());
             NPCTalkCamera.SetActive(false);
             maincamera.SetActive(true);
+            HpBar.SetActive(true);
+            Thirst.SetActive(true);
             
         }
         else
@@ -111,6 +127,9 @@ public class NPCtalk : MonoBehaviour
             playereIsClose=true;
             StartCoroutine(Typing());
             objectname.text=charactername;
+            HpBar.SetActive(false);
+            Thirst.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
         }
         
         
@@ -124,9 +143,10 @@ public class NPCtalk : MonoBehaviour
             NPCTalkCamera.SetActive(false);
             maincamera.SetActive(true);
             StopAllCoroutines();
-          
+            HpBar.SetActive(true);
+            Thirst.SetActive(true);
             StartCoroutine(Tele());
-            transform.position = Shelter.position;
+            transform.position = Target1.transform.position;
         }
     }
     

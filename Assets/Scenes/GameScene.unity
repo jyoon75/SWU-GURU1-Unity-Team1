@@ -816,6 +816,7 @@ GameObject:
   - component: {fileID: 97585487}
   - component: {fileID: 97585486}
   - component: {fileID: 97585489}
+  - component: {fileID: 97585490}
   m_Layer: 7
   m_Name: ProtoFriend2
   m_TagString: Untagged
@@ -838,7 +839,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -926,13 +927,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogpanel: {fileID: 719509443}
   NPCtext: {fileID: 1285759288}
-  dialog: []
+  dialog:
+  - "\uC5EC\uAE30 \uC274 \uB9CC\uD55C \uACF3\uC774 \uC788\uC744\uAE4C? \uC624\uB7AB\uB3D9\uC548
+    \uAC78\uC5C8\uB354\uB2C8 \uB108\uBB34 \uD798\uB4E4\uC5B4.."
+  - "\uACE0\uB9C8\uC6CC ! \uB355\uBD84\uC5D0 \uC0B4\uC558\uC5B4... "
   index: 0
   playereIsClose: 0
   contButton: {fileID: 241306218}
   NPCTalkCamera: {fileID: 1545182154}
   maincamera: {fileID: 648602861}
-  charactername: 
+  HpBar: {fileID: 0}
+  Thirst: {fileID: 214613900}
+  Target1: {fileID: 0}
+  charactername: "\uAC15\uAD6C\uB984"
   objectname: {fileID: 890167739}
 --- !u!114 &97585487
 MonoBehaviour:
@@ -995,6 +1002,27 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!135 &97585490
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97585481}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &131815207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2875,6 +2903,7 @@ GameObject:
   - component: {fileID: 296805556}
   - component: {fileID: 296805555}
   - component: {fileID: 296805558}
+  - component: {fileID: 296805559}
   m_Layer: 7
   m_Name: ProtoFriend4
   m_TagString: Untagged
@@ -2897,7 +2926,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2985,13 +3014,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogpanel: {fileID: 1762665980}
   NPCtext: {fileID: 1762665982}
-  dialog: []
+  dialog:
+  - "\uC774\uACF3\uC5D0\uC11C \uD63C\uC790 \uC624\uB798 \uBC84\uD2F0\uAE30\uB294
+    \uD798\uB4E4 \uAC83 \uAC19\uC740\uB370, \uC880\uBE44\uAC00 \uC0AC\uBC29\uC5D0\uC11C
+    \uBAB0\uB824\uC640. "
+  - "\uADF8\uACF3\uB3C4 \uC0AC\uBC29\uC5D0\uC11C? \uADF8\uB798\uB3C4 \uD568\uAED8\uB77C\uBA74
+    \uAD1C\uCC2E\uACA0\uC9C0!"
   index: 0
   playereIsClose: 0
   contButton: {fileID: 268007843}
   NPCTalkCamera: {fileID: 180103431}
   maincamera: {fileID: 648602861}
-  charactername: 
+  HpBar: {fileID: 330018958}
+  Thirst: {fileID: 214613900}
+  Target1: {fileID: 0}
+  charactername: "\uB9BF\uC2DC"
   objectname: {fileID: 77349492}
 --- !u!114 &296805556
 MonoBehaviour:
@@ -3047,6 +3084,27 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!135 &296805559
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296805550}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &311940415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3640,6 +3698,7 @@ GameObject:
   - component: {fileID: 437130853}
   - component: {fileID: 437130852}
   - component: {fileID: 437130855}
+  - component: {fileID: 437130856}
   m_Layer: 7
   m_Name: ProtoFriend3
   m_TagString: Untagged
@@ -3662,7 +3721,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3750,13 +3809,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogpanel: {fileID: 1452119478}
   NPCtext: {fileID: 1648659202}
-  dialog: []
+  dialog:
+  - "\uB204, \uB204\uAD6C\uC57C?! \uC544 \uACF5\uBB34\uC6D0.. \uACF5\uBB34\uC6D0?!
+    \uADF8\uB7FC \uD639\uC2DC? "
+  - "\uC5ED\uC2DC \uAD6C\uD574\uC8FC\uB7EC \uC628\uAC70\uAD6C\uB098! \uBC16\uC5D0
+    \uB098\uAC00\uB294\uAC74 \uC2EB\uC9C0\uB9CC \uC5EC\uAE38 \uBE68\uB9AC \uBC97\uC5B4\uB098\uACE0
+    \uC2F6\uC5C8\uC5B4.. "
   index: 0
   playereIsClose: 0
   contButton: {fileID: 273347629}
   NPCTalkCamera: {fileID: 789037506}
   maincamera: {fileID: 648602861}
-  charactername: 
+  HpBar: {fileID: 330018958}
+  Thirst: {fileID: 214613900}
+  Target1: {fileID: 0}
+  charactername: "\uAE40\uCC44"
   objectname: {fileID: 1605744951}
 --- !u!114 &437130853
 MonoBehaviour:
@@ -3812,6 +3879,27 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!135 &437130856
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437130847}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &449753654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4817,7 +4905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC800\uAE30\uC5D0 \uC6B0\uB9AC \uC258\uD130\uAC00 \uC788\uC5B4"
+  m_Text: "\uB9DE\uC2B5\uB2C8\uB2E4"
 --- !u!222 &632592129
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7219,6 +7307,7 @@ MonoBehaviour:
   isJumping: 0
   hp: 20
   actionManager: {fileID: 1894479439}
+  talkManager: {fileID: 0}
 --- !u!114 &1045380207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7231,8 +7320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4506a892b446d534ba5cc52b082bbfe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 5
-  playerTransform: {fileID: 1045380205}
+  rotSpeed: 200
+  actionManager: {fileID: 1894479439}
 --- !u!114 &1045380208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10195,6 +10284,7 @@ GameObject:
   - component: {fileID: 1688678467}
   - component: {fileID: 1688678466}
   - component: {fileID: 1688678469}
+  - component: {fileID: 1688678470}
   m_Layer: 7
   m_Name: ProtoFriend1
   m_TagString: Untagged
@@ -10217,12 +10307,12 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 3
+  m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1688678463
@@ -10283,7 +10373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688678461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 1, z: 7.01}
+  m_LocalPosition: {x: 6.18, y: 1, z: 17.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10305,13 +10395,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogpanel: {fileID: 1289288854}
   NPCtext: {fileID: 1501967516}
-  dialog: []
+  dialog:
+  - "\uC5B4\uC6B0, \uB2F9\uC2E0\uC774 \uC5EC\uAE30 \uAD00\uB9AC\uC790\uC57C? \uBAA9\uB9D0\uB77C
+    \uC8FD\uACA0\uB124"
+  - "\uC88B\uC544 \uD55C\uBC88 \uAC00\uBCF4\uC9C0."
   index: 0
   playereIsClose: 0
   contButton: {fileID: 689248816}
   NPCTalkCamera: {fileID: 1536984046}
   maincamera: {fileID: 648602861}
-  charactername: 
+  HpBar: {fileID: 330018958}
+  Thirst: {fileID: 214613900}
+  Target1: {fileID: 638021107}
+  charactername: "\uAE40\uD76C\uC625"
   objectname: {fileID: 1587927250}
 --- !u!114 &1688678467
 MonoBehaviour:
@@ -10372,6 +10468,27 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!135 &1688678470
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688678461}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1731360527
 GameObject:
   m_ObjectHideFlags: 0
@@ -11116,6 +11233,7 @@ GameObject:
   - component: {fileID: 1866634131}
   - component: {fileID: 1866634130}
   - component: {fileID: 1866634132}
+  - component: {fileID: 1866634133}
   m_Layer: 7
   m_Name: ProtoFriend5
   m_TagString: Untagged
@@ -11138,7 +11256,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -11226,13 +11344,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogpanel: {fileID: 85862217}
   NPCtext: {fileID: 227182557}
-  dialog: []
+  dialog:
+  - "\uC5EC\uAE30\uAC00 \uC258\uD130\uC778\uAC00.. \uD639\uC2DC \uC258\uD130\uC758
+    \uB2F4\uB2F9\uC790\uC774\uC2E0\uAC00\uC694? "
+  - "\uC804\uC5D0 \uC258\uD130\uC758 \uC704\uCE58\uB97C \uBBF8\uB9AC \uC678\uC6E0\uB358\uAC8C
+    \uC2E0\uC758 \uD55C\uC218\uC600\uAD70\uC694. \uC55E\uC73C\uB85C \uC798 \uBD80\uD0C1\uB4DC\uB9BD\uB2C8\uB2E4. "
   index: 0
   playereIsClose: 0
   contButton: {fileID: 1506801187}
   NPCTalkCamera: {fileID: 1510715686}
   maincamera: {fileID: 648602861}
-  charactername: 
+  HpBar: {fileID: 330018958}
+  Thirst: {fileID: 214613900}
+  Target1: {fileID: 0}
+  charactername: "\uC815\uADFC\uB450"
   objectname: {fileID: 827108284}
 --- !u!114 &1866634131
 MonoBehaviour:
@@ -11268,6 +11393,27 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!135 &1866634133
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866634125}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1894479437
 GameObject:
   m_ObjectHideFlags: 0
@@ -12130,7 +12276,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC800\uAE30\uC5D0 \uC6B0\uB9AC \uC258\uD130\uAC00 \uC788\uC5B4"
+  m_Text: "\uC6B0\uB9AC \uC258\uD130 \uC640\uBCFC\uB798?"
 --- !u!222 &2066296291
 CanvasRenderer:
   m_ObjectHideFlags: 0

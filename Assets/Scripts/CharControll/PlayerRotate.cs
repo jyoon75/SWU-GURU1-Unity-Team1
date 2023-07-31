@@ -1,70 +1,70 @@
-////¿øº» ÄÚµå
+//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½
 
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-
-//public class PlayerRotate : MonoBehaviour
-//{
-//    public float rotSpeed = 200f;
-
-//    float mx = 0;
-
-//    public ActionManager actionManager;
-
-//    // Start is called before the first frame update
-//    void Start()
-//    {
-//        Cursor.lockState = CursorLockMode.Locked; // ¸¶¿ì½º Ä¿¼­¸¦ È­¸é Áß¾Ó¿¡ °íÁ¤
-//    }
-
-//    // Update is called once per frame
-//    void Update()
-//    {
-//        if (actionManager.playerAction)
-//        {
-//            // ¸¶¿ì½º ÀÔ·Â ¹Þ¾Æ º¯¼ö¿¡ ÀúÀå
-//            float mouse_X = Input.GetAxis("Mouse X");
-
-//            // È¸Àü °ª º¯¼ö¿¡ ¸¶¿ì½º ÀÔ·Â°ª ¹Ì¸® ´©Àû
-//            mx += mouse_X * rotSpeed * Time.deltaTime;
-
-//            // È¸Àü ¹æÇâÀ¸·Î ¹°Ã¼ È¸Àü
-//            transform.eulerAngles = new Vector3(0, mx, 0);
-//        }
-//    }
-//}
-
-
-//ÀÌÇÏ ¼öÁ¤ ÄÚµå
-
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMouseLook : MonoBehaviour
+public class PlayerRotate : MonoBehaviour
 {
-    public float sensitivity = 5f; // Ä«¸Þ¶ó È¸Àü ¼Óµµ
-    public Transform playerTransform; // ÇÃ·¹ÀÌ¾îÀÇ TransformÀ» ÀúÀåÇÏ´Â º¯¼ö
+   public float rotSpeed = 200f;
 
-    private float rotationX = 0f;
+   float mx = 0;
 
-    private void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked; // ¸¶¿ì½º Ä¿¼­¸¦ È­¸é Áß¾Ó¿¡ °íÁ¤
-    }
+   public ActionManager actionManager;
 
-    private void Update()
-    {
-        // ¸¶¿ì½º ÀÔ·ÂÀ» ¹Þ¾Æ¼­ Ä«¸Þ¶ó¸¦ È¸Àü½ÃÅµ´Ï´Ù.
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
+   // Start is called before the first frame update
+   void Start()
+   {
+       Cursor.lockState = CursorLockMode.Locked; // ï¿½ï¿½ï¿½ì½º Ä¿ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ ï¿½ß¾Ó¿ï¿½ ï¿½ï¿½ï¿½ï¿½
+   }
 
-        // ¼öÆò È¸Àü (ÇÃ·¹ÀÌ¾î¸¦ ±âÁØÀ¸·Î ÁÂ¿ì È¸Àü)
-        playerTransform.Rotate(Vector3.up, mouseX);
+   // Update is called once per frame
+   void Update()
+   {
+       if (actionManager.playerAction)
+       {
+           // ï¿½ï¿½ï¿½ì½º ï¿½Ô·ï¿½ ï¿½Þ¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+           float mouse_X = Input.GetAxis("Mouse X");
 
-        // ¼öÁ÷ È¸Àü (Ä«¸Þ¶ó¸¦ ±âÁØÀ¸·Î »óÇÏ È¸Àü)
-        rotationX -= mouseY;
-        rotationX = Mathf.Clamp(rotationX, -90f, 90f); // Ä«¸Þ¶ó°¡ ³Ê¹« È¸ÀüÇÏÁö ¾Êµµ·Ï Á¦ÇÑ
-        transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
-    }
+           // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì½º ï¿½Ô·Â°ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+           mx += mouse_X * rotSpeed * Time.deltaTime;
+
+           // È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ È¸ï¿½ï¿½
+           transform.eulerAngles = new Vector3(0, mx, 0);
+       }
+   }
 }
+
+
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½
+
+
+// using UnityEngine;
+
+// public class CameraMouseLook : MonoBehaviour
+// {
+//     public float sensitivity = 5f; // Ä«ï¿½Þ¶ï¿½ È¸ï¿½ï¿½ ï¿½Óµï¿½
+//     public Transform playerTransform; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ Transformï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+//     private float rotationX = 0f;
+    
+//     private void Start()
+//     {
+//         Cursor.lockState = CursorLockMode.Locked; // ï¿½ï¿½ï¿½ì½º Ä¿ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ ï¿½ß¾Ó¿ï¿½ ï¿½ï¿½ï¿½ï¿½
+//     }
+
+//     private void Update()
+//     {
+//         // ï¿½ï¿½ï¿½ì½º ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ Ä«ï¿½Þ¶ï¿½ È¸ï¿½ï¿½ï¿½ï¿½Åµï¿½Ï´ï¿½.
+//         float mouseX = Input.GetAxis("Mouse X") * sensitivity;
+//         float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
+
+//         // ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ (ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â¿ï¿½ È¸ï¿½ï¿½)
+//         playerTransform.Rotate(Vector3.up, mouseX);
+
+//         // ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ (Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½)
+//         rotationX -= mouseY;
+//         rotationX = Mathf.Clamp(rotationX, -90f, 90f); // Ä«ï¿½Þ¶ï¿½ ï¿½Ê¹ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//         transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
+//     }
+// }
