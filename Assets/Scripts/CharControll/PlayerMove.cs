@@ -21,7 +21,11 @@ public class PlayerMove : MonoBehaviour
     public float jumpPower = 5.5f;  // 점프력 변수
     public bool isJumping = false;  // 점프 상태 변수
 
-    public int hp = 20;             // 최대 체력 변수
+    public int cur_hp = 20;             //  체력 변수
+    public int max_hp = 100; //최대 체력 변수
+
+    public int cur_ts = 20;             //  갈증 변수
+    public int max_ts = 100; //최대 갈증 변수
 
     public ActionManager actionManager;
 
