@@ -94,7 +94,7 @@ public class DayNightController : MonoBehaviour
         {
             isNight = !isNight; // 낮 -> 밤
             currentTime = 0f; //미리 밤 타이머 초기화
-            /*
+            
             if(Input.GetKeyUp(KeyCode.Escape))
             {
                 if (Paused)
@@ -106,7 +106,7 @@ public class DayNightController : MonoBehaviour
                     GameManager.instance.Stop();
                 }
             }
-            */
+            
 
         }
     }
@@ -115,6 +115,20 @@ public class DayNightController : MonoBehaviour
     {
         isNight = !isNight; // 타이머가 끝났을 때, 밤에서 낮으로 토글
         Day++; // N+1 일차
+
+        day_currentTime = 0f; //낮 타이머 초기화
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (Paused)
+            {
+                GameManager.instance.Play();
+            }
+            else
+            {
+                GameManager.instance.Stop();
+            }
+        }
     }
 
 }
