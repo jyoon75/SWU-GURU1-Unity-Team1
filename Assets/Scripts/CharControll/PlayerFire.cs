@@ -9,7 +9,7 @@ public class PlayerFire : MonoBehaviour
 
     public int weaponPower = 5;     // 발사 무기 공격력
     public int attackPower = 7;     // 근거리 공격력
-    public float attackRadius = 2.0f;   // 근거리 공격 반경
+    public float attackRadius = 1.0f;   // 근거리 공격 반경
 
     public DayNightController dayNightController;
 
@@ -84,16 +84,14 @@ public class PlayerFire : MonoBehaviour
 
                 case WeaponMode.Bat:
                     //Collider[] cols = Physics.OverlapBox(transform.position + new Vector3(0f, 0f, 2f), new Vector3(4, 2, 3), transform.rotation, LayerMask.NameToLayer("Enemy"));
-                    Collider[] cols = Physics.OverlapSphere(transform.position, attackRadius, LayerMask.NameToLayer("Enemy"));
+                    Collider[] cols = Physics.OverlapSphere(transform.position, attackRadius, 1 << 9);
                     //OnDrawGizmos();
 
                     for (int i = 0; i < cols.Length; i++)
                     {
                         print(i + "에너미 데미지");
-                        cols[i] = null;
+                        //cols[i].GetComponent<EnemyFSM>().HitEnemy(attackPower);
                     }
-
-
                     break;
             }
         }

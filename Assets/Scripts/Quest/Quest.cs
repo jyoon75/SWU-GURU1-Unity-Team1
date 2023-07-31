@@ -154,19 +154,104 @@ public class Quest : MonoBehaviour
     private void Day1Quest()
     {
         // 퀘스트 설정
-        quest1Name = "큐브 모으기";
+        quest1Name = "큐브 모으기(임시)";
         quest1NeedItem = "Cube";
         quest1RequireAmount = 2;
 
+        quest2Name = "함께 싸울 동료 찾기";
+
         // 퀘스트 진행
         Questing1();
+        Questing2();
 
-        
     }
 
     private void Day2Quest()
     {
-        
+        // 퀘스트 설정
+        quest1Name = "큐브 모으기(임시)";
+        quest1NeedItem = "Cube";
+        quest1RequireAmount = 2;
+
+        quest2Name = "함께 싸울 동료 찾기";
+
+        // 퀘스트 진행
+        Questing1();
+    }
+
+    private void Day3Quest()
+    {
+        // 퀘스트 설정
+        quest1Name = "큐브 모으기(임시)";
+        quest1NeedItem = "Cube";
+        quest1RequireAmount = 2;
+
+        quest2Name = "함께 싸울 동료 찾기";
+
+        // 퀘스트 진행
+        Questing1();
+
+
+    }
+
+    private void Day4Quest()
+    {
+        // 퀘스트 설정
+        quest1Name = "큐브 모으기(임시)";
+        quest1NeedItem = "Cube";
+        quest1RequireAmount = 2;
+
+        quest2Name = "함께 싸울 동료 찾기";
+
+        // 퀘스트 진행
+        Questing1();
+
+
+    }
+
+    private void Day5Quest()
+    {
+        // 퀘스트 설정
+        quest1Name = "큐브 모으기(임시)";
+        quest1NeedItem = "Cube";
+        quest1RequireAmount = 2;
+
+        quest2Name = "함께 싸울 동료 찾기";
+
+        // 퀘스트 진행
+        Questing1();
+
+
+    }
+
+    private void Day6Quest()
+    {
+        // 퀘스트 설정
+        quest1Name = "큐브 모으기(임시)";
+        quest1NeedItem = "Cube";
+        quest1RequireAmount = 2;
+
+        quest2Name = "함께 싸울 동료 찾기";
+
+        // 퀘스트 진행
+        Questing1();
+
+
+    }
+
+    private void Day7Quest()
+    {
+        // 퀘스트 설정
+        quest1Name = "큐브 모으기(임시)";
+        quest1NeedItem = "Cube";
+        quest1RequireAmount = 2;
+
+        quest2Name = "함께 싸울 동료 찾기";
+
+        // 퀘스트 진행
+        Questing1();
+
+
     }
 
     /*
