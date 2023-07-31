@@ -62,8 +62,8 @@ public class PlayerFire : MonoBehaviour
                         // 만약 레이에 부딪힌 대상의 레이어가 'Enemy'라면 데미지 함수 실행
                         if (hitInfo.transform.gameObject.layer == LayerMask.NameToLayer("Enemy"))
                         {
-                            //EnemyFSM eFSM = hitInfo.transform.GetComponent<EnemyFSM>();
-                            //eFSM.HitEnemy(weaponPower);
+                            Enemy eFSM = hitInfo.transform.GetComponent<Enemy>();
+                            eFSM.HitEnemy(weaponPower);
                         }
                         else // 그렇지 않다면 피격 이벤트 표시
                         {
@@ -89,8 +89,7 @@ public class PlayerFire : MonoBehaviour
 
                     for (int i = 0; i < cols.Length; i++)
                     {
-                        print(i + "에너미 데미지");
-                        //cols[i].GetComponent<EnemyFSM>().HitEnemy(attackPower);
+                        cols[i].GetComponent<Enemy>().HitEnemy(attackPower);
                     }
                     break;
             }
