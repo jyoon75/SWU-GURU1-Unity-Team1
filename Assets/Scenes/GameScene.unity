@@ -815,6 +815,7 @@ GameObject:
   - component: {fileID: 97585488}
   - component: {fileID: 97585487}
   - component: {fileID: 97585486}
+  - component: {fileID: 97585489}
   m_Layer: 7
   m_Name: ProtoFriend2
   m_TagString: Untagged
@@ -972,6 +973,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   moveDirection: {x: 0, y: 0, z: 0}
+--- !u!195 &97585489
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97585481}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &131815207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,6 +2874,7 @@ GameObject:
   - component: {fileID: 296805557}
   - component: {fileID: 296805556}
   - component: {fileID: 296805555}
+  - component: {fileID: 296805558}
   m_Layer: 7
   m_Name: ProtoFriend4
   m_TagString: Untagged
@@ -3001,6 +3025,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68eb3c110ae21ee4ca7cea888e734e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &296805558
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296805550}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &311940415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3593,6 +3639,7 @@ GameObject:
   - component: {fileID: 437130854}
   - component: {fileID: 437130853}
   - component: {fileID: 437130852}
+  - component: {fileID: 437130855}
   m_Layer: 7
   m_Name: ProtoFriend3
   m_TagString: Untagged
@@ -3743,6 +3790,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68eb3c110ae21ee4ca7cea888e734e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &437130855
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437130847}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &449753654
 GameObject:
   m_ObjectHideFlags: 0
@@ -6290,6 +6359,7 @@ GameObject:
   - component: {fileID: 910332507}
   - component: {fileID: 910332506}
   - component: {fileID: 910332505}
+  - component: {fileID: 910332509}
   m_Layer: 9
   m_Name: enemy
   m_TagString: Untagged
@@ -6378,13 +6448,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910332504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 1, z: 0}
+  m_LocalPosition: {x: 9.85, y: 1, z: -4.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &910332509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910332504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ebae1ac94b86740958b8e93054cd2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 15
 --- !u!1 &936209458
 GameObject:
   m_ObjectHideFlags: 0
@@ -10111,6 +10194,7 @@ GameObject:
   - component: {fileID: 1688678468}
   - component: {fileID: 1688678467}
   - component: {fileID: 1688678466}
+  - component: {fileID: 1688678469}
   m_Layer: 7
   m_Name: ProtoFriend1
   m_TagString: Untagged
@@ -10266,6 +10350,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68eb3c110ae21ee4ca7cea888e734e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &1688678469
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688678461}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1731360527
 GameObject:
   m_ObjectHideFlags: 0
@@ -10315,12 +10421,13 @@ GameObject:
   - component: {fileID: 1732113672}
   - component: {fileID: 1732113671}
   - component: {fileID: 1732113670}
+  - component: {fileID: 1732113674}
   m_Layer: 0
   m_Name: ProtoMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &1732113670
 MeshCollider:
@@ -10409,6 +10516,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1732113674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732113669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 55c646c87cf80b343aed47930659bcd9, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1739123451
 GameObject:
   m_ObjectHideFlags: 0
@@ -10977,6 +11115,7 @@ GameObject:
   - component: {fileID: 1866634126}
   - component: {fileID: 1866634131}
   - component: {fileID: 1866634130}
+  - component: {fileID: 1866634132}
   m_Layer: 7
   m_Name: ProtoFriend5
   m_TagString: Untagged
@@ -11107,6 +11246,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68eb3c110ae21ee4ca7cea888e734e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &1866634132
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866634125}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1894479437
 GameObject:
   m_ObjectHideFlags: 0
