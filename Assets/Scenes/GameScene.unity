@@ -7307,7 +7307,6 @@ MonoBehaviour:
   isJumping: 0
   hp: 20
   actionManager: {fileID: 1894479439}
-  talkManager: {fileID: 0}
 --- !u!114 &1045380207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7341,7 +7340,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045380201}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 960845c063a2e0d45b2b0774d5b9cc43, type: 3}
   m_Name: 
@@ -8405,7 +8404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1289288855
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8801,8 +8800,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -341, y: 19}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -146.00114, y: 28.334812}
+  m_SizeDelta: {x: 549.998, y: 48.6696}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1501967516
 MonoBehaviour:
@@ -10416,7 +10415,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688678461}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed659932bd44aca49861a2223330fe47, type: 3}
   m_Name: 

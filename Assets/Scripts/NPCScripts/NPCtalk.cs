@@ -22,7 +22,7 @@ public class NPCtalk : MonoBehaviour
 
     public GameObject Target1;
     
-
+    
     
 
 
@@ -49,7 +49,7 @@ public class NPCtalk : MonoBehaviour
         dialogpanel.SetActive(false);
         maincamera.SetActive(true);
         NPCTalkCamera.SetActive(false);
-        
+       
         
        
         
@@ -73,7 +73,7 @@ public class NPCtalk : MonoBehaviour
         StopAllCoroutines();
         HpBar.SetActive(true);
         Thirst.SetActive(true);
-        Cursor.lockState = CursorLockMode.Locked;
+       
     }
     IEnumerator Typing()
     {
@@ -129,7 +129,7 @@ public class NPCtalk : MonoBehaviour
             objectname.text=charactername;
             HpBar.SetActive(false);
             Thirst.SetActive(false);
-            Cursor.lockState = CursorLockMode.None;
+            
         }
         
         
