@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
 {
-    //public GameObject bulletEffect; // 피격 이펙트 오브젝트
-    //ParticleSystem ps;              // 피격 이펙트 파티클 시스템
+    public GameObject bulletEffect; // 피격 이펙트 오브젝트
+    ParticleSystem ps;              // 피격 이펙트 파티클 시스템
 
     public int weaponPower = 5;     // 발사 무기 공격력
     public int attackPower = 7;     // 근거리 공격력
@@ -28,7 +28,7 @@ public class PlayerFire : MonoBehaviour
     void Start()
     {
         // 피격 이펙트 오브젝트에서 파티클 시스템 컴포넌트 가져오기
-        //ps = bulletEffect.GetComponent<ParticleSystem>();
+        ps = bulletEffect.GetComponent<ParticleSystem>();
 
         // 애니메이터 컴포넌트 가져오기
         //anim = GetComponentInChildren<Animator>();
@@ -69,13 +69,13 @@ public class PlayerFire : MonoBehaviour
                         {
                             print("탕!");
                             // 피격 이벤트 위치 레이 부딪힌 지점으로
-                            //bulletEffect.transform.position = hitInfo.point;
+                            bulletEffect.transform.position = hitInfo.point;
 
                             // 피격 이벤트의 forward 방향을 레이가 부딪힌 지점의 법선 벡터와 일치시킴
-                            //bulletEffect.transform.forward = hitInfo.normal;
+                            bulletEffect.transform.forward = hitInfo.normal;
 
                             // 피격 이벤트 플레이
-                            //ps.Play();
+                            ps.Play();
                         }
                         // 총 이펙트를 실시
                         //StartCoroutine(ShootEffectOn(0.05f));

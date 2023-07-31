@@ -60,6 +60,10 @@ public class Quest : MonoBehaviour
         {
             questPanel.SetActive(false);
         }
+        else
+        {
+            questPanel.SetActive(true);
+        }
 
 
     }
