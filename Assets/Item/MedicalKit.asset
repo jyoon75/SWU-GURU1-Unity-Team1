@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1c84614fb9a97d4083d06b1c1be0c72, type: 3}
-  m_Name: Cube
+  m_Name: MedicalKit
   m_EditorClassIdentifier: 
-  itemName: Cube
-  itemImage: {fileID: 21300000, guid: 4d0c9bdeafe879d479d03350f54ff885, type: 3}
-  itemPrefab: {fileID: 8165766269910755517, guid: 37fb769d8a7917b4482876924679cd42, type: 3}
+  itemName: MedicalKit
+  itemImage: {fileID: 21300000, guid: b25b9869253424b439aade1df13662ca, type: 3}
+  itemPrefab: {fileID: 3862699260797088495, guid: 34427844e91f652429b9a6b41995aa5e, type: 3}
   itemType: 0
