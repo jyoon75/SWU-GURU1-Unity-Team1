@@ -6,13 +6,14 @@ using TMPro;
 
 public class PlayerPoint : MonoBehaviour
 {
-    public Image crossImg;                  // Å©·Î½º ÀÌ¹ÌÁö
-    public TextMeshProUGUI contactText;     // Å©·Î½º ¿· ÅØ½ºÆ®
-    public TextMeshProUGUI messageText;     // ¸Þ½ÃÁö ÅØ½ºÆ®
+    public Image crossImg;                  // Å©ï¿½Î½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½
+    public TextMeshProUGUI contactText;     // Å©ï¿½Î½ï¿½ ï¿½ï¿½ ï¿½Ø½ï¿½Æ®
+    public TextMeshProUGUI messageText;     // ï¿½Þ½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½Æ®
 
     public TalkManager talkManager;
     public Inventory inventory;
     public DayNightController dayNightController;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class PlayerPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!dayNightController.isNight) // ³·ÀÏ ¶§¸¸ »óÈ£ÀÛ¿ë °¡´É
+        if (!dayNightController.isNight) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½
         {
             CheakObject();
         }
@@ -32,55 +33,56 @@ public class PlayerPoint : MonoBehaviour
 
     void CheakObject()
     {
-        // ·¹ÀÌ »ý¼º ÈÄ ¹ß»ç À§Ä¡¿Í ÁøÇà¹æÇâ ¼³Á¤
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ß»ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-        RaycastHit hitInfo = new RaycastHit();  // ·¹ÀÌ°¡ ºÎµúÈù ´ë»óÀÇ Á¤º¸ ÀúÀå
+        RaycastHit hitInfo = new RaycastHit();  // ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        // ·¹ÀÌ ¹ß»ç ÈÄ ¸¸¾à ºÎµúÈù ¹°Ã¼ ÀÖ´Ù¸é
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½Ö´Ù¸ï¿½
         if (Physics.Raycast(ray, out hitInfo))
         {
-            // ¸¸¾à ·¹ÀÌ¿¡ ºÎµúÈù ´ë»óÀÇ ·¹ÀÌ¾î°¡ 'Character'¶ó¸é
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¿ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾î°¡ 'Character'ï¿½ï¿½ï¿½
             if (hitInfo.transform.gameObject.layer == LayerMask.NameToLayer("Character"))
             {
-                // Å©·Î½º ³ë¶õ»öÀ¸·Î ¸¸µé°í 'Å¬¸¯ÇÏ¿© ´ëÈ­' ¹®±¸ ¶ç¿ì±â
-                crossImg.color = Color.yellow;
-                contactText.text = "Click to talk";
+               
 
-                // ¸¸¾à ¸¶¿ì½º ¿ÞÂÊ ¹öÆ° ÀÔ·Â¹ÞÀ½
-                if (Input.GetMouseButtonDown(0))
-                {
-                    talkManager.Talk(hitInfo.collider.name);
-                }
+
+
+
+
+
+
+
+
             }
 
-            // ¸¸¾à ·¹ÀÌ¿¡ ºÎµúÈù ´ë»óÀÇ ·¹ÀÌ¾î°¡ 'Item'¶ó¸é
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¿ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾î°¡ 'Item'ï¿½ï¿½ï¿½
             else if (hitInfo.transform.gameObject.layer == LayerMask.NameToLayer("Item"))
             {
-                // Å©·Î½º ³ë¶õ»öÀ¸·Î ¸¸µé°í 'Å¬¸¯ÇÏ¿© ¾ò±â' ¹®±¸ ¶ç¿ì±â
+                // Å©ï¿½Î½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ 'Å¬ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½' ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 crossImg.color = Color.yellow;
                 contactText.text = "Click to get";
 
-                // ¸¸¾à ¸¶¿ì½º ¿ÞÂÊ ¹öÆ° ÀÔ·Â¹ÞÀ½
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½Ô·Â¹ï¿½ï¿½ï¿½
                 if (Input.GetMouseButtonDown(0))
                 {
-                    // ºÎµúÈù ´ë»óÀÇ ¾ÆÀÌÅÛ Á¤º¸¸¦ ÀÎº¥Åä¸®¿¡ Ãß°¡
+                    // ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ß°ï¿½
                     Item targetItem = hitInfo.transform.GetComponent<ItemData>().item;
                     inventory.AcquireItem(targetItem);
 
-                    // È¹µæ ¸Þ½ÃÁö ¶ç¿ì±â
-                    messageText.text = targetItem.itemName + " È¹µæ";
+                    // È¹ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    messageText.text = targetItem.itemName + " È¹ï¿½ï¿½";
                     StartCoroutine(ClearMessage());
 
-                    // È¹µæÇÑ ¾ÆÀÌÅÛ ¾ø¾Ö±â
+                    // È¹ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö±ï¿½
                     Destroy(hitInfo.transform.gameObject);
                     targetItem = null;
                 }
             }
 
-            // ¸¸¾à ºÎµúÈù ´ë»óÀÇ Å×±×°¡ Bed¶ó¸é
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×±×°ï¿½ Bedï¿½ï¿½ï¿½
             else if(hitInfo.collider.CompareTag("Bed"))
             {
-                // Å©·Î½º ³ë¶õ»öÀ¸·Î ¸¸µé°í 'Å¬¸¯ÇÏ¿© ÈÞ½ÄÇÏ±â' ¹®±¸ ¶ç¿ì±â
+                // Å©ï¿½Î½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ 'Å¬ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½Þ½ï¿½ï¿½Ï±ï¿½' ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 crossImg.color = Color.yellow;
                 contactText.text = "Click to rest";
 

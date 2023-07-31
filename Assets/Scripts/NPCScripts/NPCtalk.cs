@@ -22,6 +22,7 @@ public class NPCtalk : MonoBehaviour
 
     public GameObject Target1;
     
+    public GameObject player;
     
     
 
@@ -118,9 +119,11 @@ public class NPCtalk : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Cursor.lockState = CursorLockMode.Confined;
         
         if (other.tag == "Player")
         {
+            // player.GetComponent<PlayerPoint>().enabled=false;
             NPCTalkCamera.SetActive(true);
             maincamera.SetActive(false);
             dialogpanel.SetActive(true);
@@ -138,6 +141,7 @@ public class NPCtalk : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            // player.GetComponent<PlayerPoint>().enabled=false;
             playereIsClose=false;
             zeroText();
             NPCTalkCamera.SetActive(false);
@@ -147,6 +151,7 @@ public class NPCtalk : MonoBehaviour
             Thirst.SetActive(true);
             StartCoroutine(Tele());
             transform.position = Target1.transform.position;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     
