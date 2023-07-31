@@ -52,6 +52,8 @@ public class DayNightController : MonoBehaviour
             // 타이머가 작동 중인지 확인하고 경과 시간을 증가
             if (currentTime < timerDuration)
             {
+
+                print("데이나잇스크립트: 밤이다");
                 currentTime += 1 * Time.deltaTime;
                 remainTime = timerDuration - currentTime;
                 min = Mathf.FloorToInt(remainTime / 60); //분 표현
@@ -67,14 +69,18 @@ public class DayNightController : MonoBehaviour
                 if (min == 0 && sec == 0)
                 {
                     OnTimerEnd();
-
-                    day_currentTime += Time.deltaTime;
-                    day_sec = Mathf.CeilToInt(remainTime % 60); //(낮)초 표현
-
-                    print("낮의 초:" + day_sec);
                 }
             }
 
+        }
+
+        else
+        {
+            day_currentTime += 1 * Time.deltaTime;
+            day_sec = Mathf.CeilToInt(day_currentTime); //(낮)초 표현
+
+            print("데이나잇스크립트: 낮이다");
+            print("낮의 초:" + day_sec);
         }
 
         // 조명의 강도를 조절하여 시간에 따라 밝기를 변화시킵니다.
@@ -109,13 +115,6 @@ public class DayNightController : MonoBehaviour
     {
         isNight = !isNight; // 타이머가 끝났을 때, 밤에서 낮으로 토글
         Day++; // N+1 일차
-
-        //day_currentTime += Time.deltaTime;
-        //day_sec = Mathf.CeilToInt(remainTime % 60); //(낮)초 표현
-
-        //print("낮의 초:"+day_sec);
-
-        //저장하기
     }
 
 }
