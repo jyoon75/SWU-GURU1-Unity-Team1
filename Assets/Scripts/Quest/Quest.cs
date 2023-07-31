@@ -52,10 +52,35 @@ public class Quest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (dayNightController.Day == 1)
+        if (dayNightController.Day == 1)
         {
             Day1Quest();
         }
+        if (dayNightController.Day == 2)
+        {
+            Day2Quest();
+        }
+        if (dayNightController.Day == 3)
+        {
+            Day3Quest();
+        }
+        if (dayNightController.Day == 4)
+        {
+            Day4Quest();
+        }
+        if (dayNightController.Day == 5)
+        {
+            Day5Quest();
+        }
+        if (dayNightController.Day == 6)
+        {
+            Day6Quest();
+        }
+        if (dayNightController.Day == 7)
+        {
+            Day7Quest();
+        }
+
         if (dayNightController.isNight)
         {
             questPanel.SetActive(false);
@@ -107,7 +132,7 @@ public class Quest : MonoBehaviour
         if (quest2isQuesting)
         {
             // 퀘스트창에 띄우기
-            questText2.text = quest2Name + " (" + quest2CurrentAmout + "/" + quest2RequireAmount + ")";
+            questText2.text = quest2Name;
 
             for (int i = 0; i < inventory.slots.Length; i++)
             {
@@ -118,7 +143,7 @@ public class Quest : MonoBehaviour
                         quest2CurrentAmout = inventory.slots[i].itemCount;
 
                         questText2.color = Color.white;
-                        questText2.text = quest2Name + " (" + quest2CurrentAmout + "/" + quest2RequireAmount + ")";
+                        questText2.text = quest2Name;
                     }
                 }
             }
@@ -131,7 +156,7 @@ public class Quest : MonoBehaviour
         if (quest3isQuesting)
         {
             // 퀘스트창에 띄우기
-            questText2.text = quest3Name + " (" + quest3CurrentAmout + "/" + quest3RequireAmount + ")";
+            questText3.text = quest3Name;
 
             for (int i = 0; i < inventory.slots.Length; i++)
             {
@@ -141,8 +166,8 @@ public class Quest : MonoBehaviour
                     {
                         quest3CurrentAmout = inventory.slots[i].itemCount;
 
-                        questText2.color = Color.white;
-                        questText2.text = quest3Name + " (" + quest3CurrentAmout + "/" + quest3RequireAmount + ")";
+                        questText3.color = Color.white;
+                        questText3.text = quest3Name;
                     }
                 }
             }
@@ -154,104 +179,96 @@ public class Quest : MonoBehaviour
     private void Day1Quest()
     {
         // 퀘스트 설정
-        quest1Name = "큐브 모으기(임시)";
-        quest1NeedItem = "Cube";
-        quest1RequireAmount = 2;
+        quest1Name = "목재 모으기";
+        quest1NeedItem = "Wood";
+        quest1RequireAmount = 3;
 
         quest2Name = "함께 싸울 동료 찾기";
 
         // 퀘스트 진행
         Questing1();
         Questing2();
-
     }
 
     private void Day2Quest()
     {
         // 퀘스트 설정
-        quest1Name = "큐브 모으기(임시)";
-        quest1NeedItem = "Cube";
-        quest1RequireAmount = 2;
+        quest1Name = "목재 모으기";
+        quest1NeedItem = "Wood";
+        quest1RequireAmount = 5;
 
         quest2Name = "함께 싸울 동료 찾기";
 
+        quest3Name = "식량 찾아 체력 회복하기";
+
         // 퀘스트 진행
         Questing1();
+        Questing2();
+        Questing3();
     }
 
     private void Day3Quest()
     {
         // 퀘스트 설정
-        quest1Name = "큐브 모으기(임시)";
-        quest1NeedItem = "Cube";
-        quest1RequireAmount = 2;
+        quest1Name = "석재 모으기";
+        quest1NeedItem = "Rock";
+        quest1RequireAmount = 5;
 
         quest2Name = "함께 싸울 동료 찾기";
 
+        quest3Name = "치료팩 찾아 동료 치료하기";
+
         // 퀘스트 진행
         Questing1();
-
-
+        Questing2();
+        Questing3();
     }
 
     private void Day4Quest()
     {
         // 퀘스트 설정
-        quest1Name = "큐브 모으기(임시)";
-        quest1NeedItem = "Cube";
-        quest1RequireAmount = 2;
+        quest1Name = "목재 모으기";
+        quest1NeedItem = "Wood";
+        quest1RequireAmount = 7;
 
         quest2Name = "함께 싸울 동료 찾기";
 
         // 퀘스트 진행
         Questing1();
-
-
+        Questing2();
     }
 
     private void Day5Quest()
     {
         // 퀘스트 설정
-        quest1Name = "큐브 모으기(임시)";
-        quest1NeedItem = "Cube";
-        quest1RequireAmount = 2;
-
-        quest2Name = "함께 싸울 동료 찾기";
+        quest1Name = "비축 식량 모으기";
+        quest1NeedItem = "Can";
+        quest1RequireAmount = 3;
 
         // 퀘스트 진행
         Questing1();
-
-
     }
 
     private void Day6Quest()
     {
         // 퀘스트 설정
-        quest1Name = "큐브 모으기(임시)";
-        quest1NeedItem = "Cube";
-        quest1RequireAmount = 2;
-
-        quest2Name = "함께 싸울 동료 찾기";
+        quest1Name = "목재 모으기";
+        quest1NeedItem = "Wood";
+        quest1RequireAmount = 10;
 
         // 퀘스트 진행
         Questing1();
-
-
     }
 
     private void Day7Quest()
     {
         // 퀘스트 설정
-        quest1Name = "큐브 모으기(임시)";
-        quest1NeedItem = "Cube";
-        quest1RequireAmount = 2;
-
-        quest2Name = "함께 싸울 동료 찾기";
+        quest1Name = "석재 모으기";
+        quest1NeedItem = "Rock";
+        quest1RequireAmount = 10;
 
         // 퀘스트 진행
         Questing1();
-
-
     }
 
     /*
