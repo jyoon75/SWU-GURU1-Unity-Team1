@@ -53,13 +53,13 @@ public class Zombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(DayNightController.instance.isNight)
-        {
-            //여긴 활성화
-        }
-        else
-        {
-            //여기에 좀비 비활성화
-        }
+        //if(DayNightController.instance.isNight)
+        //{
+        //    //여긴 활성화
+        //}
+        //else
+        //{
+        //    //여기에 좀비 비활성화
+        //}
     }
 }
