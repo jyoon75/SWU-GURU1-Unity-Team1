@@ -82,7 +82,7 @@ public class NPCtalk : MonoBehaviour
         foreach (char letter in dialog[index].ToCharArray())
         {
             NPCtext.text += letter;
-            contButton.SetActive(false);
+            // contButton.SetActive(false);
             yield return new WaitForSeconds(wordSpeed);
             
             
