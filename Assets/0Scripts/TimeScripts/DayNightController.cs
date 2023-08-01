@@ -26,6 +26,8 @@ public class DayNightController : MonoBehaviour
 
     public static bool Paused = false;
 
+    public GameObject NightPack;
+
     //public GameObject TimerText;
     //public GameObject TimerCountText;
 
@@ -42,6 +44,7 @@ public class DayNightController : MonoBehaviour
         isNight = false;
         currentTime = 0f; // 타이머 시작 시간을 0으로 초기화
         day_currentTime = 0f; //낮 타이머도
+        NightPack.SetActive(false);
     }
 
     private void Update()
@@ -53,6 +56,7 @@ public class DayNightController : MonoBehaviour
             if (currentTime < timerDuration)
             {
 
+                NightPack.SetActive(true);
                 print("데이나잇스크립트: 밤이다");
                 currentTime += 1 * Time.deltaTime;
                 remainTime = timerDuration - currentTime;
@@ -79,6 +83,7 @@ public class DayNightController : MonoBehaviour
             day_currentTime += 1 * Time.deltaTime;
             day_sec = Mathf.CeilToInt(day_currentTime); //(낮)초 표현
 
+            NightPack.SetActive(false);
             print("데이나잇스크립트: 낮이다");
             print("낮의 초:" + day_sec);
         }
@@ -106,6 +111,7 @@ public class DayNightController : MonoBehaviour
                     GameManager.instance.Stop();
                 }
             }
+
             */
 
         }

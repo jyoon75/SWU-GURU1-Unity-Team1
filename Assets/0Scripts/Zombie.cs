@@ -6,8 +6,9 @@ public class Zombie : MonoBehaviour
 {
     public GameObject[] prefabs; 
     private BoxCollider area;    
-    public int count = 100;      //생성 게임 오브젝트 갯수
-    
+    public int count = 100;
+  
+    public GameObject enemy;
     private List<GameObject> gameObject = new List<GameObject>();
     
     void Start()
@@ -55,11 +56,12 @@ public class Zombie : MonoBehaviour
     {
         if(DayNightController.instance.isNight)
         {
-            //여긴 활성화
+            enemy.SetActive(true); //여긴 활성화
         }
         else
         {
             //여기에 좀비 비활성화
+            enemy.SetActive(false);
         }
     }
 }
